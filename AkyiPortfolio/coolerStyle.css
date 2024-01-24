@@ -1,0 +1,218 @@
+/*importing fonts and initializing*/
+  @import url('https://fonts.googleapis.com/css2?family=Afacad&family=Barlow+Condensed:wght@300;500&family=Oswald:wght@200&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Patrick+Hand+SC&display=swap');
+
+:root{
+    --violet : #6355a8;
+    --orange : #DB7F67;
+    --light : #EFEBE2;
+    --dark : #A1908D;
+    --black : #0A100D;
+}
+
+/*animation*/
+@keyframes Nimation {
+    0%  {color : var(--black); transform : scale(1.0);}
+    25% {color : var(--orange); transform : scale(1.5);}
+    50% {color : var(--dark); transform : scale(1.0);}
+    75% {color : var(--tan); transform : scale(1.5);}
+    100%{color : var(--black); transform : scale(1.0);}
+}
+
+body{
+    background-color : white;
+    font-family: 'Afacad', sans-serif;
+}
+
+/*First background and transistion section*/
+    .bgimgWrap{
+        width : 100%;
+        transition: all 1s ease;
+    }
+
+    .profileText{
+        position : right;
+        width : 100%;
+        padding : 50px;
+        transition: all 1s ease;
+        font-family: 'Patrick Hand SC', 'cursive';
+        font-size: 20px;
+        color : var(--violet);
+    }
+
+    .coverImg{
+        display : block;
+        width : 100%;
+        height : auto;
+        transition: all 1s ease;
+    }
+
+    .profile{
+        display : none;
+        transition: all 1s ease;
+    }
+
+    /*classes for onscroll*/
+    .coverImg.onscroll{
+        opacity: 0%;
+        z-index: -1;
+    }
+    .profile.onscroll{
+        display : block;
+        width : 100%;
+        height : auto;
+    }
+    .bgimgWrap.onscroll{
+        display : flex;
+        position : top;
+        margin-top : -40%;
+    }
+    
+
+/*about Me section*/
+    .name{
+        font-size: 40px;
+        color : var(--black);
+        transform: scale(1.0);
+        animation-name : Nimation;
+        animation-duration: 4s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+        vertical-align: baseline;
+    }
+    .aboutMe{
+        padding : 50px;
+        color : var(--black);
+        background-image: url("./photos/Backdrop.png");
+        width : 100% - 50px;
+        height : 850px;
+        align-items: center;
+    }
+    .aboutMe p{
+        font-size: 18px;
+    }
+    .aboutMe a{
+        text-decoration: none;
+        color : var(--orange);
+        transition: all 0.3s ease;
+    }
+    .aboutMe a:hover{
+        color : var(--violet);
+    }
+
+/*Projects Section*/
+    h1{
+        text-align: center;
+        color : var(--black);
+        font-size: 50px;
+        padding: 20px;
+    }
+    .projectWrapper{
+        display : flex;
+        flex-wrap : wrap;
+        flex-direction: column;
+        width : 100%;
+        height : 1300px;
+    }
+    .projectCard{
+        width : 30%;
+        margin : 20px;
+        height : fit-content;
+        box-shadow: 0px 0px 20px var(--dark);
+        background-color: var(--light);
+        border-radius: 20px;
+        transition: all 0.3s ease;
+    }
+    .projectCard:hover{
+        transform: scale(1.1);
+    }
+    .projectImg{
+        width : 80%;
+        margin : 20px;
+        padding : 20px;
+        padding-bottom: 0px;
+        height : auto;
+    }
+    .projectInfo{
+        margin : auto;
+        margin-bottom : 20px;
+        text-align: center;
+        width : 80%;
+
+    }
+    .imgTitle{
+        font-size: large;
+        font-style: normal;
+        font-weight: 600;
+    }
+
+/*More Projects Carosel*/
+    .caroWrapper{
+        display : flex;
+        flex-flow: row;
+        overflow-x: scroll;
+        width : 80%;
+        height : auto;
+        margin : auto;
+        border-radius: 20px;
+    }
+    .caroCard{
+        width : fit-content;
+        height : auto;
+        background-color: var(--light);
+        box-shadow: 0px 0px 10px var(--dark);
+        margin : 10px;
+        border-radius: 20px;
+    }
+    .caroImg{
+        width : 300px;
+        height : auto;
+        padding : 20px;
+        margin : 20px;
+    }
+
+/*info*/
+    .infoText{
+        text-align: center;
+    }
+    .info-wrapper{
+        width : 30%;
+        margin : auto;
+        display : flex;
+        justify-content : space-between;
+        margin : auto;
+    }
+    .info-icon{
+        width : 30px;
+        height : auto;
+        margin : 10px;
+        transform : scale(1, 1);
+        transition : transform 0.5s;
+        opacity : 1;
+    }
+    .info-icon:hover{
+        transform : scale(1.2, 1.2);
+    }
+
+/*footer*/
+    footer{
+        background-color: var(--violet);
+        text-align: center;
+        color : var(--light);
+        padding : 20px;
+    }
+
+/*Styling Scrollbar*/
+::-webkit-scrollbar{
+    background-color: var(--light);
+    height : 5px;
+    width : 5px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--dark);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: var(--orange);
+}
